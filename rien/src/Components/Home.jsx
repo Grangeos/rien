@@ -17,7 +17,7 @@ class Home extends Component {
           <rect x="0" y="0" width="100%" height="100%" fill="black" style={{ mask: "url(#mask1)"}} />
         </svg>
         <section className="layer3">
-          <h1>Rien.</h1>
+          <h1>Rien</h1>
         </section>
       </Fragment>
     );
