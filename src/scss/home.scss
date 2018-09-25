@@ -14,9 +14,9 @@
   }
   .rButton{
     position: absolute;
-    left: 300px;
-    bottom: 70px;
+    padding: 1em 2em;
     display: none;
+    cursor: pointer;
 
     &.isVisible{
       display: inline-block;
@@ -36,10 +36,11 @@ h1 span {
 
 .cursor-box {
   width: 15em;
+  pointer-events: none;
   height: 15em;
   position: absolute;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 10000px rgba(0, 0, 0, 1.0);
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 1.0);
   z-index: 10;
   border-radius: 50%;
   .cursor-box-child {
