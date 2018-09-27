@@ -1,0 +1,86 @@
+//main: main.scss
+.g2{
+  background-image: url('./Picture/g2/bg.jpg');
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .wrapperHisoka{
+    display: flex;
+    justify-content: space-between;
+
+    .hisoka{
+      height: 65vh;
+      margin-top: 10vh;
+      left: 0;
+    }
+    .bubble_celeste_sentado_left{
+      position: relative;
+    	color: #073552;
+      top: 28vh;
+    	width: 350px;
+    	padding: 10px;
+    	text-align: center;
+    	background-color: white;
+    	border: 8px solid black;
+    	border-radius: 30px;
+      margin-bottom: auto;
+    &:before {
+      content: ' ';
+    	position: absolute;
+    	width: 0;
+    	height: 0;
+    	left: -50px;
+    	top: 5px;
+    	border: 25px solid;
+    	border-color: transparent black black transparent;
+    }
+    &:after {
+      content: ' ';
+  	position: absolute;
+  	width: 0;
+  	height: 0;
+  	left: -30px;
+  	top: 10px;
+  	border: 18px solid;
+  	border-color: transparent white white transparent;
+    }
+  }
+
+  }
+  .wrapperButton{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    button {
+      font-size: 1.3em;
+      margin-bottom: auto;
+      padding: 1em 2em;
+      margin: 0 .5em;
+      &:hover {
+        font-size: 0;
+        margin-bottom: auto;
+        padding: 1em 2em;
+        margin: 0 .5em;
+        &:before {
+          content: attr(data-hover);
+          font-size: 20px;
+          padding: 1em 2em;
+          margin: 0 .5em;
+
+        }
+      }
+    }
+  }
+
+
+}

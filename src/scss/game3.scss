@@ -1,0 +1,272 @@
+//main: main.scss
+.g3{
+  .bubble_celeste_sentado_left{
+    z-index: 99999;
+    position: absolute;
+    margin-left: 20vw;
+    color: #073552;
+    top: 20vh;
+    width: 350px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border: 8px solid black;
+    border-radius: 30px;
+    margin-bottom: auto;
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -50px;
+    top: 5px;
+    border: 25px solid;
+    border-color: transparent black black transparent;
+  }
+  &:after {
+    content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -30px;
+  top: 10px;
+  border: 18px solid;
+  border-color: transparent white white transparent;
+  }
+}
+  .sea{
+    background-color: #3A98F6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 20vh;
+    z-index: 999;
+
+  }
+  .hiso{
+    position: absolute;
+    top: 25.5vh;
+    width: 20vw;
+    z-index: 999;
+    animation: 4s linear 0s infinite hisokaMooving;
+
+  }
+  .boat{
+    margin-left: 1vw;
+    animation: 4s linear 0s infinite alternate boatMooving;
+
+  }
+  .goat{
+    position: absolute;
+    right: 0;
+    bottom: 3vh;
+    width: 30vw;
+    animation: 4s linear 0s infinite hisokaMooving;
+  }
+}
+
+
+html, body { height: 100%; }
+body {
+  overflow: hidden;
+}
+
+.ocean {
+  height: 5%;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -158px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0,-25px,0);
+  }
+  50% {
+    transform: translate3d(0,5px,0);
+  }
+}
+@keyframes boatMooving{
+  0%{
+    transform: rotate(0deg);
+  }
+  33%{
+    transform: rotate(-2deg);
+
+  }
+  66%{
+    transform: rotate(0deg);
+
+  }
+  100%{
+    transform: rotate(2deg);
+
+  }
+}
+@keyframes hisokaMooving{
+  0%{
+    margin: 0;
+  }
+  33%{
+    margin-bottom: 2vh;
+  }
+  66%{
+    margin: 0;
+    margin-top: 2vh;
+  }
+  100%{
+    margin: 0;
+  }
+
+}
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin abs-pos {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+canvas {
+  @include size(100%);
+}
+
+body {
+  @include size(100%);
+  background-color: #222;
+  background-image: url('https://drive.google.com/uc?export=view&id=0BzFF7FmbJUo5X0NEUXFVd0NBcWc');
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  &:after {
+    content: '';
+    @include size(100%);
+    @include abs-pos;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    animation: thunder-bg 6s infinite;
+  }
+}
+
+canvas {
+  @include abs-pos;
+}
+
+#canvas3 {
+  z-index: 5;
+}
+
+#canvas2 {
+  z-index: 10;
+}
+
+#canvas1 {
+  z-index: 100;
+}
+
+$color1: rgba(34,
+34,
+34,
+.4);
+$color2: rgba(59,
+59,
+59,
+.3);
+.thunder {
+  @at-root {
+    @-webkit-keyframes thunder-bg {
+      0% {
+        background-color: $color1;
+      }
+      9% {
+        background-color: $color1;
+      }
+      10% {
+        background-color: $color2;
+      }
+      10.5% {
+        background-color: $color1;
+      }
+      80% {
+        background-color: $color1;
+      }
+      82% {
+        background-color: $color2;
+      }
+      83% {
+        background-color: $color1;
+      }
+      83.5% {
+        background-color: $color2;
+      }
+      100% {
+        background-color: $color1;
+      }
+    }
+  }
+}
+
+.drop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
+  background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+	width:1px;
+	height:89px;
+	position: absolute;
+	bottom:200px;
+	-webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:900px;}
+}

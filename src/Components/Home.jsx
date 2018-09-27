@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import cx from 'classnames';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
@@ -44,11 +45,6 @@ class Home extends Component {
     const randY = this.getRandomInt(border, 100 - border * 2);
     const {  buttonVanishCount } = this.state;
 
-    if (buttonVanishCount === 2) {
-      alert('nouveux jeux...');
-      
-    }
-
     this.setState({
       buttonX: randX,
       buttonY: randY,
@@ -57,7 +53,22 @@ class Home extends Component {
   }
 
   render() {
-    const { spotlightX, spotlightY, spotlightEnabled, buttonX, buttonY } = this.state;
+    const { spotlightX, spotlightY, spotlightEnabled, buttonX, buttonY, buttonVanishCount } = this.state;
+
+    let button = (
+      <button
+        onClick={() => this.randomizeButtonPos()}
+        className={cx('rButton', { 'isVisible': spotlightEnabled })}
+        style={this.leftTopStyle(buttonX, buttonY, '%')}>Rien.</button>
+    )
+
+    if ( buttonVanishCount === 3 ) {
+      button = (
+        <Link to="/2kejhfjebifbzeifbherbfehrbfzbeiferhlbjh">
+          { button }
+        </Link>
+      )
+    }
 
     return (
       <Fragment>
@@ -71,10 +82,7 @@ class Home extends Component {
 
         <section className="home">
           <h1>Rien<span onClick={() => this.toggleSpotlight()}></span></h1>
-          <button
-            onClick={() => this.randomizeButtonPos()}
-            className={cx('rButton', { 'isVisible': spotlightEnabled })}
-            style={this.leftTopStyle(buttonX, buttonY, '%')}>Rien.</button>
+            { button }
         </section>
       </Fragment>
     );
