@@ -1,5 +1,6 @@
 //main: main.scss
 .g3{
+  height: 100vh !important;
   .bubble_celeste_sentado_left{
     z-index: 99999;
     position: absolute;
@@ -52,6 +53,18 @@
     animation: 4s linear 0s infinite hisokaMooving;
 
   }
+  .esteban{
+    position: absolute;
+    bottom: 0;
+    right: -50%;
+    width: 7vw;
+    border-radius: 50%;
+    z-index: 99999;
+    opacity: 0.7;
+    transform: rotate(180deg);
+    animation: 15s linear 0s infinite alternate esteban;
+
+  }
   .boat{
     margin-left: 1vw;
     animation: 4s linear 0s infinite alternate boatMooving;
@@ -64,12 +77,6 @@
     width: 30vw;
     animation: 4s linear 0s infinite hisokaMooving;
   }
-}
-
-
-html, body { height: 100%; }
-body {
-  overflow: hidden;
 }
 
 .ocean {
@@ -163,21 +170,13 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
 
-html,
-body,
+.g3,
 canvas {
   @include size(100%);
 }
 
-body {
+.g3 {
   @include size(100%);
   background-color: #222;
   background-image: url('https://drive.google.com/uc?export=view&id=0BzFF7FmbJUo5X0NEUXFVd0NBcWc');
@@ -269,4 +268,10 @@ $color2: rgba(59,
 /* animate the drops*/
 @-webkit-keyframes fall {
 	to {margin-top:900px;}
+}
+@keyframes esteban{
+
+  100%{
+    transform: translate(-150vw);
+  }
 }

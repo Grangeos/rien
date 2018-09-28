@@ -12,11 +12,16 @@
     color: grey;
     text-align: center;
   }
+  .point{
+    animation: 0.7s linear 0s infinite alternate rButton;
+
+  }
   .rButton{
     position: absolute;
     padding: 1em 2em;
     display: none;
     cursor: pointer;
+
 
     &.isVisible{
       display: inline-block;
@@ -50,5 +55,11 @@ h1 span {
     border-radius: 50%;
     border: 0;
     box-shadow: inset 0px 0px 200px 35px rgba(0,0,0,1.0);
+  }
+}
+
+@keyframes rButton{
+  100%{
+    opacity: 0.8;
   }
 }

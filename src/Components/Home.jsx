@@ -81,7 +81,7 @@ class Home extends Component {
         }
 
         <section className="home">
-          <h1>Rien<span onClick={() => this.toggleSpotlight()}></span></h1>
+          <h1>Rien<span className="point"onClick={() => this.toggleSpotlight()}></span></h1>
             { button }
         </section>
       </Fragment>
