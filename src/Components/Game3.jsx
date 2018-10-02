@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import { Draggable, Droppable } from 'react-drag-and-drop'
 import hp from '../scss/Picture/g3/hp.png';
 import boat from '../scss/Picture/g3/boat.png';
@@ -43,8 +44,9 @@ class Game3 extends Component {
     return (
       <section className="g3">
       <div class="bubble_celeste_sentado_left">
-        <p>HOMME À LA M.... CHÈVRE À   LA MER!!! Il faut que je la sauve !!!</p>
+        <p>HOMME À LA M.... CHÈVRE À   LA MER!!! Il faut que je la sauve !!! <br />(work in progress...)</p>
       </div>
+      <Link to="/4jshdbkjbkjbzkjbzkjebkzjebfkzeh"><button className="boooon">Ok, ta de la chance, on bosse sur cette enigme mais c'est chaud... Bon tiens, passe à la page suivante</button></Link>
         <img className="hiso"src={hp}/>
         <img className="boat" src={boat}/>
         <img className="goat" src={goat}/>

@@ -1,6 +1,24 @@
 //main: main.scss
 .g3{
   height: 100vh !important;
+  .boooon{
+    position: absolute;
+    width: 15vw;
+    right: 10vw;
+    top: 10vh;
+    z-index: 99999;
+    border-radius: 10%;
+    transition: 1s;
+    padding: 1vh 2vw;
+    border: none;
+    cursor: pointer;
+    &:hover{
+      background-color: black;
+      border: none;
+      color: green;
+      transition: 1s;
+    }
+  }
   .bubble_celeste_sentado_left{
     z-index: 99999;
     position: absolute;
